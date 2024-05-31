@@ -1,0 +1,52 @@
+<div *ngFor="let projects of project">
+  <div *ngIf="project" class="container mt-4">
+     <div class="card shadow-sm">
+       <div class="card-header bg-primary text-white">
+         <h3 class="mb-0">{{ projects.projectName }}</h3>
+       </div>
+       <div class="card-body">
+         <table class="table table-bordered table-striped">
+           <tbody>
+             <tr>
+               <td class="font-weight-bold">Description</td>
+               <td>{{ projects.projectDescription }}</td>
+             </tr>
+             <tr>
+               <td class="font-weight-bold">Start Date</td>
+               <td>{{ projects.startDate | date:'longDate' }}</td>
+             </tr>
+             <tr>
+               <td class="font-weight-bold">End Date</td>
+               <td>{{ projects.endDate | date:'longDate' }}</td>
+             </tr>
+             <tr>
+              <td class="font-weight-bold">Tasks</td>
+              <td>
+                
+                
+                <a [routerLink]="['/project-task', { projectId: projects.id }]" routerLinkActive="active">Task Details</a>
+  
+  
+              </td>
+            </tr>
+            <tr>
+              <td class="font-weight-bold">Team member</td>
+              <td>
+                
+                
+                <!-- <a [routerLink]="['/team-member-details', { projectId: projects.id, tasks: getTasksAsString(projects.tasks) }]" routerLinkActive="active">TeamMembers Details</a> -->
+                <a [routerLink]="['/team-member-details', { projectId: projects.id, teamMembers: getMembersAsString(projects.teamMembers) }]" routerLinkActive="active">TeamMembers Details</a>
+  
+              </td>
+            </tr>
+             <tr>
+               <td class="font-weight-bold">Status</td>
+               <td>{{ projects.status }}</td>
+             </tr>
+           </tbody>
+         </table>
+       </div>
+     </div><br>
+   
+     
+   </div>

@@ -1,0 +1,255 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "name": "Task 1",
+      "description": "Complete the project report",
+      "assignedTo": "John Doe",
+      "priority": "High",
+      "status": "To Do",
+      "startDate": "2024-05-01T00:00:00Z",
+      "dueDate": "2024-05-20T00:00:00Z",
+      "completedDate": null
+    },
+    {
+      "id": "3",
+      "name": "Task 3",
+      "description": "Test the application for bugs",
+      "assignedTo": "Sam Wilson",
+      "priority": "Low",
+      "status": "Completed",
+      "startDate": "2024-05-10T00:00:00Z",
+      "dueDate": "2024-05-15T00:00:00Z",
+      "completedDate": "2024-05-16T00:00:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Task 4",
+      "description": "Prepare the presentation slides",
+      "assignedTo": "Emily Johnson",
+      "priority": "High",
+      "status": "To Do",
+      "startDate": "2024-05-12T00:00:00Z",
+      "dueDate": "2024-05-22T00:00:00Z",
+      "completedDate": null
+    }
+  ],
+  "users": [
+    {
+      "id": "13",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "contact": "+1234567890",
+      "role": "project-manager",
+      "status": "Active"
+    },
+    {
+      "id": "17",
+      "name": "nithish",
+      "email": "abc14@gmail.com",
+      "contact": "45934598349",
+      "role": "Team Member"
+    },
+    {
+      "id": "18",
+      "name": "Aruna",
+      "email": "abcfd14@gmail.com",
+      "contact": "45954598349",
+      "role": "Team Member"
+    },
+    {
+      "id": "19",
+      "name": "Satheesh",
+      "email": "satheesh@gmail.com",
+      "contact": "7487598347",
+      "role": "Project Manager"
+    }
+  ],
+  "projects": [
+    {
+      "projectID": 1,
+      "projectName": "Upgrade Company Website",
+      "projectDescription": "Redesign and enhance the company website for better user experience.",
+      "projectManagerID": 101,
+      "startDate": "2024-06-01",
+      "endDate": "2024-09-30",
+      "status": "Active",
+      "tasks": [
+        {
+          "taskID": 101,
+          "taskName": "Design Wireframes",
+          "taskDescription": "Create wireframe designs for the new website layout.",
+          "assignedToTeamMemberID": 301,
+          "startDate": "2024-06-01",
+          "endDate": "2024-06-15",
+          "status": "In Progress",
+          "priority": "High"
+        },
+        {
+          "taskID": 102,
+          "taskName": "Develop Frontend",
+          "taskDescription": "Implement frontend design using HTML, CSS, and JavaScript.",
+          "assignedToTeamMemberID": 302,
+          "startDate": "2024-06-16",
+          "endDate": "2024-07-15",
+          "status": "Not Started",
+          "priority": "Medium"
+        },
+        {
+          "taskID": 103,
+          "taskName": "Implement Backend Functionality",
+          "taskDescription": "Develop backend functionality using Python and Django framework.",
+          "assignedToTeamMemberID": 303,
+          "startDate": "2024-07-01",
+          "endDate": "2024-08-15",
+          "status": "Not Started",
+          "priority": "High"
+        }
+      ],
+      "teamMembers": [
+        {
+          "teamMemberID": 101,
+          "teamMemberName": "John Doe",
+          "email": "john.doe@example.com",
+          "designation": "Project Manager"
+        },
+        {
+          "teamMemberID": 301,
+          "teamMemberName": "Alice",
+          "email": "alice@example.com",
+          "designation": "Designer"
+        },
+        {
+          "teamMemberID": 302,
+          "teamMemberName": "Bob",
+          "email": "bob@example.com",
+          "designation": "Frontend Developer"
+        },
+        {
+          "teamMemberID": 303,
+          "teamMemberName": "Charlie",
+          "email": "charlie@example.com",
+          "designation": "Backend Developer"
+        }
+      ],
+      "id": "9164"
+    },
+    {
+      "projectID": 2,
+      "projectName": "Company Website",
+      "projectDescription": "Redesign and enhance the company website for better user experience.",
+      "projectManagerID": 101,
+      "startDate": "2024-06-01",
+      "endDate": "2024-09-30",
+      "status": "Active",
+      "tasks": [
+        {
+          "taskID": 101,
+          "taskName": "Design Wireframes",
+          "taskDescription": "Create wireframe designs for the new website layout.",
+          "assignedToTeamMemberID": 301,
+          "startDate": "2024-06-01",
+          "endDate": "2024-06-15",
+          "status": "In Progress",
+          "priority": "High"
+        },
+        {
+          "taskID": 102,
+          "taskName": "Develop Frontend",
+          "taskDescription": "Implement frontend design using HTML, CSS, and JavaScript.",
+          "assignedToTeamMemberID": 302,
+          "startDate": "2024-06-16",
+          "endDate": "2024-07-15",
+          "status": "Not Started",
+          "priority": "Medium"
+        },
+        {
+          "taskID": 103,
+          "taskName": "Implement Backend Functionality",
+          "taskDescription": "Develop backend functionality using Python and Django framework.",
+          "assignedToTeamMemberID": 303,
+          "startDate": "2024-07-01",
+          "endDate": "2024-08-15",
+          "status": "Not Started",
+          "priority": "High"
+        }
+      ],
+      "teamMembers": [
+        {
+          "teamMemberID": 101,
+          "teamMemberName": "John Doe",
+          "email": "john.doe@example.com",
+          "designation": "Project Manager"
+        },
+        {
+          "teamMemberID": 301,
+          "teamMemberName": "Alice",
+          "email": "alice@example.com",
+          "designation": "Designer"
+        },
+        {
+          "teamMemberID": 302,
+          "teamMemberName": "Bob",
+          "email": "bob@example.com",
+          "designation": "Frontend Developer"
+        },
+        {
+          "teamMemberID": 303,
+          "teamMemberName": "Charlie",
+          "email": "charlie@example.com",
+          "designation": "Backend Developer"
+        }
+      ],
+      "id": "9164"
+    },
+    {
+      "id": "aa16",
+      "projectID": 123,
+      "projectName": "sdfghj",
+      "projectDescription": "asdfghj",
+      "clientID": 3,
+      "endDate": "2024-06-02",
+      "status": "In Progress",
+      "teamMembers": []
+    },
+    {
+      "id": "b578",
+      "projectID": 21,
+      "projectName": "kjdbc",
+      "projectDescription": "inviunfg",
+      "clientID": 12,
+      "endDate": "2024-06-02",
+      "status": "In Progress"
+    },
+    {
+      "id": "f37b",
+      "projectName": "vgvuv",
+      "projectDescription": "hubhn",
+      "status": "In Progress",
+      "startDate": "2024-05-30",
+      "endDate": "2024-07-22",
+      "clientId": 3,
+      "projectManagerId": 2
+    },
+    {
+      "id": "4de0",
+      "projectName": "onlinefood",
+      "projectDescription": "make it like swiggy",
+      "status": "In Progress",
+      "startDate": "2024-05-30",
+      "endDate": "2024-08-22",
+      "clientId": 3,
+      "projectManagerId": 2
+    },
+    {
+      "id": "e0c4",
+      "projectName": "RevHire",
+      "projectDescription": "develop a console based application",
+      "status": "In Progress",
+      "startDate": "2024-05-30",
+      "endDate": "2024-06-22",
+      "clientId": 3,
+      "projectManagerId": 2
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd; /* Optional: Add border bottom for visual separation */
+}
+
+.dropdown-container {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.dropdown-container label {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+/* Dropdown styles */
+.dropdown-container select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+  appearance: none; /* Remove default arrow icon */
+  -webkit-appearance: none; /* Remove default arrow icon for Safari */
+  -moz-appearance: none; /* Remove default arrow icon for Firefox */
+}
+
+/* Hover and Focus styles */
+.dropdown-container select:hover,
+.dropdown-container select:focus {
+  border-color: #555; /* Change border color on hover and focus */
+}
+
+
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-container input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+.task-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.task-card {
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-title {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.task-due-date {
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
+
+.labels-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.task-priority, .task-status {
+  padding: 3px 1px;
+  border-radius: 3px;
+  width: 70px;
+  margin-right: 10px;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.priority-high {
+  background-color: rgb(245, 49, 49);
+  color: white;
+}
+
+.priority-medium {
+  background-color: #ffcc00;
+  color: white;
+}
+
+.priority-low {
+  background-color: rgb(73, 190, 73);
+  color: white;
+}
+
+.task-status {
+  color: #1662a0;
+}
+
+.updateStatusbutton, .moreDetailsButton {
+  font-size: 0.8em;
+  /* padding: 3px 10px; */
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.updateStatusbutton {
+  background-color: #2e9cf1;
+  padding: 3px 6.5px;
+}
+
+.updateStatusbutton:hover {
+  background-color: #063d73;
+}
+
+.moreDetailsButton {
+  background-color: #4c9bef;
+  padding: 3px 10px;
+}
+
+.moreDetailsButton:hover {
+  background-color: #1b5491;
+}
+
+@media (max-width: 768px) {
+  .task-card {
+    flex: 1 0 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-card {
+    flex: 1 0 100%;
+  }
+}

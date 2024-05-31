@@ -1,0 +1,21 @@
+<!-- projects.component.html -->
+
+<div class="main-content">
+  <div class="card-container">
+    <div *ngFor="let project of projects" class="card">
+      <div>
+        <div class="card-header">{{ project.projectName }}</div>
+      <div>{{getClientName(project.clientId)}}</div>
+        <div class="card-content"><strong>Start Date:</strong> {{ project.startDate }}</div>
+
+        <div class="card-status" [ngClass]="'label-' + project.status.toLowerCase().replace(' ', '-')">{{ project.status }}</div>
+      </div>
+      <div class="card-buttons">
+        <button class="view-details" [routerLink]="['/view-details', project.projectID ]" [state]="{ project: project }" routerLinkActive="active">View Details</button>
+        <button class="delete" (click)="deleteProject(project)">
+          <img src="assets/trash.png" alt="Delete">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

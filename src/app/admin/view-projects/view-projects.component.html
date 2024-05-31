@@ -1,0 +1,36 @@
+<div *ngIf="projects.length > 0" class="container mt-4">
+    <div *ngFor="let project of projects" class="card shadow-sm mb-4">
+      <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">{{ project.projectName }}</h3>
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-striped">
+          <tbody>
+            <tr>
+              <td class="font-weight-bold">Description</td>
+              <td>{{ project.projectDescription }}</td>
+            </tr>
+            <tr>
+              <td class="font-weight-bold">Start Date</td>
+              <td>{{ project.startDate | date:'longDate' }}</td>
+            </tr>
+            <tr>
+              <td class="font-weight-bold">End Date</td>
+              <td>{{ project.endDate | date:'longDate' }}</td>
+            </tr>
+            <tr>
+              <td class="font-weight-bold">Tasks</td>
+              <td><a routerLink="/view-task" routerLinkActive="active">View Tasks</a></td>
+            </tr>
+            <tr>
+              <td class="font-weight-bold">Status</td>
+              <td>{{ project.status }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  
+

@@ -1,0 +1,17 @@
+<!-- <div><app-admin-header (toggleSidebarEvent)="toggleSidebar()"></app-admin-header></div>
+<div><app-admin-sidebar [isSidebarVisible]="isSidebarVisible"></app-admin-sidebar></div> -->
+<!-- <div><app-admin-header ></app-admin-header></div>
+<div><app-admin-sidebar ></app-admin-sidebar></div>
+
+      <router-outlet></router-outlet> -->
+    
+
+      <div class="app-container">
+            <app-admin-header></app-admin-header>
+            <div class="main-content">
+              <app-admin-sidebar></app-admin-sidebar>
+              <div class="content">
+                <router-outlet></router-outlet>
+              </div>
+            </div>
+      </div>

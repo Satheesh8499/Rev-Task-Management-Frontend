@@ -1,0 +1,132 @@
+<div>Revtaskmanagement</div>
+<div>Revtaskmanagement</div>
+<div>Revtaskmanagement</div>
+<div>Revtaskmanagement</div>
+
+<div class="container mt-5">
+  <h1>User Management</h1>
+  
+  <button type="button" class="btn btn-primary btn-create-user" data-bs-toggle="modal" data-bs-target="#userModal"><img src="assets/addbutton.png" >
+     Create New User
+  </button>
+  
+  <div><table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Role</th>
+        <th>Account Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.role}}</td>
+        <!-- <td>
+          <select class="form-select" [(ngModel)]="user.status">
+            <option value="activate">Activate</option>
+            <option value="deactivate">Deactivate</option>
+          </select>
+        </td> -->
+        <td>
+          <select class="form-select">
+            <option value="activate">Activate</option>
+            <option value="deactivate">Deactivate</option>
+          </select>
+        </td>
+        <td>
+          <button class="btn btn-warning btn-sm " data-bs-toggle="modal" data-bs-target="#userModal" (click)="editUser(user)"><img src="assets/edit.png" alt="Edit"></button>
+          <button class="btn btn-danger btn-sm " (click)="deleteUser(user.id)"><img src="assets/trash.png" alt="Delete"></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+
+  <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userModalLabel">{{ isEditing ? 'Edit User' : 'Create New User' }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form #userForm="ngForm">
+            <div class="mb-3">
+              <label for="userName" class="form-label">User Name</label>
+              <input type="text" class="form-control" id="username" name="username" [(ngModel)]="user.username">
+            </div>
+            <div class="mb-3">
+              <label for="userEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="userEmail" name="email" [(ngModel)]="user.email">
+            </div>
+            <div class="mb-3">
+              <label for="userContact" class="form-label">Password</label>
+              <input type="text" class="form-control" id="userPassword" name="password" [(ngModel)]="user.password">
+            </div>
+            <div class="mb-3">
+              <label for="userRole" class="form-label">Role</label>
+              <select class="form-select" id="userRole" name="role" [(ngModel)]="user.role">
+                <option value="Admin">Admin</option>
+                <option value="Project Manager">Project Manager</option>
+                <option value="Team Member">Team Member</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" (click)="isEditing ? updateUser() : createUser()">{{ isEditing ? 'Update' : 'Submit' }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userModalLabel">Create New User</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form #userForm="ngForm">
+            <div class="mb-3">
+              <label for="userName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="username" name="username" [(ngModel)]="user.username">
+            </div>
+            <div class="mb-3">
+              <label for="userEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="userEmail" name="email" [(ngModel)]="user.email">
+            </div>
+            <div class="mb-3">
+              <label for="userContact" class="form-label">Password</label>
+              <input type="text" class="form-control" id="userPassword" name="password" [(ngModel)]="user.password">
+            </div>
+            <div class="mb-3">
+              <label for="userRole" class="form-label">Role</label>
+              <select class="form-select" id="userRole" name="role" [(ngModel)]="user.role">
+                <option value="Admin">Admin</option>
+                <option value="Project Manager">Project Manager</option>
+                <option value="Team Member">Team Member</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss ="modal"(click)="createUser()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

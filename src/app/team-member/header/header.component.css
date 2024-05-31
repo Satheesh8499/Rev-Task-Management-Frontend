@@ -1,0 +1,30 @@
+.navbar {
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  height: 60px;
+  box-shadow: 0 2px 4px rgb(26, 26, 26);
+}
+  
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;  
+  background-color: #930c57;
+  color: white;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+  color: aliceblue;
+}
+
+.navbar-login {
+  font-size: 1em;
+  cursor: pointer;
+}

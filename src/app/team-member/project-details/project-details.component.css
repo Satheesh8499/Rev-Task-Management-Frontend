@@ -1,0 +1,130 @@
+body {
+  background-color: #e9ecef; /* Light grey background color to match most themes */
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff; /* White background for card */
+}
+
+.card-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 20px;
+  font-size: 1.5em;
+  background: #007bff; /* Bootstrap primary color or match company branding */
+  color: white;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.table {
+  margin-bottom: 0;
+  background-color: #ffffff; /* Ensure table background is white */
+}
+
+.table td, .table th {
+  padding: 15px;
+  vertical-align: middle;
+  border-top: 1px solid #dee2e6;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered td, .table-bordered th {
+  border: 1px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05); /* Light grey stripes for better readability */
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}
+.member-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.member-table th, .member-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.member-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.member-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.member-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.member-table th, .member-table td {
+  text-align: left;
+}
+
+.member-table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.toggle-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.toggle-button:hover {
+  background-color: #0056b3;
+}
+
+/* CSS for the navigation menu */
+ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  display: inline; /* Display list items horizontally */
+  margin-right: 10px; /* Add spacing between list items */
+}
+
+a {
+  text-decoration: none;
+  background-color: #007bff; /* Remove underline from links */
+  color: white; /* Set link color */
+  padding: 7px 12px; /* Add padding to links */
+  border-radius: 5px; /* Add rounded corners to links */
+}
+
+a:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}
+
+a.active {
+  background-color: #007bff; /* Set background color for active link */
+  color: white; /* Set text color for active link */
+}

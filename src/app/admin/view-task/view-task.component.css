@@ -1,0 +1,16 @@
+.odd-row {
+    background-color: rgb(163, 145, 145);
+  }
+  
+  .even-row {
+    background-color: #f8f9fa; /* Bootstrap's light gray color */
+  }
+  
+  .table th, .table td {
+    vertical-align: middle;
+  }
+  
+  .table .btn {
+    margin-right: 5px;
+  }
+  

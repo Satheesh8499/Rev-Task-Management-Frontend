@@ -1,0 +1,30 @@
+<div class="modal fade" id="bootstrapModal" tabindex="-1" aria-labelledby="bootstrapModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="bootstrapModalLabel">Task Details</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body">
+         <!-- Task details content here -->
+         <p><strong>Description:</strong> {{ task.description }}</p>
+         <p><strong>Assigned By:</strong> {{ task.assignedBy }}</p>
+         <!-- Update status dropdown -->
+         <div class="mb-3">
+           <label for="updateStatus" class="form-label">Update Status</label>
+           <select class="form-select" id="updateStatus">
+             <option value="ToDo">To Do</option>
+             <option value="InProgress">In Progress</option>
+             <option value="Completed">Completed</option>
+           </select>
+         </div>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         <!-- <button type="button" class="btn btn-primary" (click)="updateTaskStatus()">Save changes</button> -->
+         <button type="button" class="btn btn-primary">Save changes</button>
+       </div>
+     </div>
+   </div>
+ </div>
+ 

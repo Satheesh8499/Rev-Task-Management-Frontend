@@ -1,0 +1,23 @@
+<div *ngIf="teamMembers.length > 0; else noMembers">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+      
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let member of teamMembers">
+          <td>{{ member.id }}</td>
+          <td>{{ member.username }}</td>
+          <td>{{ member.email }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noMembers>
+    <p>No team members found.</p>
+  </ng-template>

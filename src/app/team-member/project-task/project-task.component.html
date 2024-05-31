@@ -1,0 +1,182 @@
+<div class="d-flex justify-content-end mb-3">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#taskModal">
+      Create New Task
+    </button>
+  </div>
+  
+  <div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" #taskModal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="taskModalLabel">Create New Task</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form #taskForm="ngForm" (ngSubmit)="submitTask(taskForm)"> 
+            <div class="mb-3">
+              <label for="taskName" class="form-label">Task Name</label>
+              <input type="text" class="form-control" id="taskName" name="taskName" ngModel required>
+            </div>
+            <div class="mb-3">
+              <label for="taskDescription" class="form-label">Description</label>
+              <input type="text" class="form-control" id="taskDescription" name="taskDescription" ngModel required>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="priority" class="form-label">Priority</label>
+                <select class="form-select" id="priority" name="priority" ngModel required>
+                  <option value="High">High</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Low">Low</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-select" id="status" name="status" ngModel required>
+                  <option value="To do">To Do</option>
+                  <option value="In progress">In Progress</option>
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="startDate" class="form-label">Start Date</label>
+                <input type="date" class="form-control" id="startDate" name="startdate" ngModel required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="dueDate" class="form-label">Due Date</label>
+                <input type="date" class="form-control" id="dueDate" name="dueDate" ngModel required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="projectName" class="form-label">Assigned To</label>
+                <select class="form-select" id="assignedTo" name="assignedTo" ngModel required>
+                  <option *ngFor="let mem of project.teamMembers" [value]=mem.id>{{ mem.username }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <div class="task-cards">
+    <div *ngFor="let task of tasks" class="task-card">
+      <div class="task-title">{{ task.taskName }}</div>
+      <div class="task-priority" [ngClass]="{
+        'priority-high': task.priority === 'High',
+        'priority-medium': task.priority === 'Medium',
+        'priority-low': task.priority === 'Low'
+      }">{{ task.priority }}</div>
+      <div class="task-due-date">{{ task.dueDate | date:'longDate' }}</div>
+      <div class="buttons">
+        <div class="task-status">{{ task.status }}</div>
+        <button class="btn btn-primary updateStatusbutton" (click)="openUpdateStatusModal(task)" data-toggle="modal" data-target="#updateStatusModal">Update Status</button>
+        <button class="btn btn-info moreDetailsButton" (click)="openDetailsModal(task)">Details</button>
+      </div>
+    </div>
+  </div> -->
+  
+  <!-- Display tasks as cards below -->
+  <div class="task-cards">
+    <!-- Iterate over filteredTasks and display as cards -->
+    <div *ngFor="let task of tasks" class="task-card">
+      <div class="task-header">
+        <div class="task-title">{{ task.taskName }}</div>
+        <div class="task-options dropdown">
+          <!-- <button class="btn btn-link dropdown-toggle" type="button" id="taskOptionsMenu" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-three-dots-vertical"></i>
+          </button> -->
+          <button class="options-icon" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-three-dots-vertical"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="taskOptionsMenu">
+            <li>
+              <button class="dropdown-item" (click)="openUpdateStatusModal(task)">Update Status</button>
+            </li>
+            <li>
+              <button class="dropdown-item" (click)="deleteTask(task.id)">Delete Task</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="task-due-date">{{ task.dueDate | date:'longDate'  }}</div>
+      <div class="task-priority" [ngClass]="{'priority-high': task.priority === 'High', 'priority-medium': task.priority === 'Medium', 'priority-low': task.priority === 'Low'}">
+        {{ task.priority }}
+      </div>
+     
+      <div class="buttons">
+        <div class="task-status">{{ task.status }}</div>
+        <button class="btn btn-info moreDetailsButton" (click)="openDetailsModal(task)">Details</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <div>
+    <button (click)="toggleData()" class="toggle-button">{{ showData ? 'Hide Team Members' : 'View Team Members' }}</button>
+    <div *ngIf="showData" class="team-members">
+      <table class="table member-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let member of project.teamMembers">
+            <td>{{ member.teamMemberName }}</td>
+            <td>{{ member.designation }}</td>
+            <td>{{ member.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> -->
+  
+  <!-- Update Status Modal -->
+  <div class="modal fade" id="updateStatusModal" tabindex="-1" role="dialog" aria-labelledby="updateStatusModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateStatusModalLabel">Update Task Status</h5>
+        </div>
+        <div class="modal-body">
+          <label for="taskStatus">Status:</label>
+          <select id="taskStatus" [(ngModel)]="selectedTask.status">
+            <option value="To Do">To Do</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeUpdateStatusModal()">Close</button>
+          <button type="button" class="btn btn-primary" (click)="updateTaskStatus()" data-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- More Details Modal -->
+  <ng-template #detailsModal let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title">{{ selectedTask.taskName }} Details</h5>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Description:</strong> {{ selectedTask.taskDescription }}</p>
+      <!-- <p><strong>Assigned By:</strong> {{ selectedTask.assignedBy }}</p> 
+      <p><strong>Assigned To:</strong> {{ selectedTask.assignedTo }}</p>  -->
+      <p><strong>Start Date:</strong> {{ selectedTask.startDate | date:'longDate' }}</p>
+      <p><strong>Due Date:</strong> {{ selectedTask.dueDate | date:'longDate' }}</p>
+    </div>
+  </ng-template>

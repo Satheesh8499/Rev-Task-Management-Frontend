@@ -1,0 +1,51 @@
+/* Style for the container of project details cards */
+.container {
+    margin-top: 20px;
+    
+  }
+
+  .canvas-container {
+    width: 200px;
+    height: 200px;
+}
+
+  .card {
+    margin-top: 80px;
+    width:800px;
+    left:340px;
+    margin-bottom: 20px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+  }
+  
+  .card-header {
+    padding: 10px 15px;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  
+  .table td {
+    padding: 8px;
+  }
+
+  .table th {
+    padding: 8px;
+    font-weight: bold;
+  }
+  
+  .bg-primary {
+    background-color: #007bff !important;
+    color: #ffffff;
+  }
+  
+  .active {
+    font-weight: bold;
+  }
+  

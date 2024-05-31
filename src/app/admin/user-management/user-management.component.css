@@ -1,0 +1,207 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #011f3e;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1001;
+}
+
+.sidebar {
+  position: fixed;
+  top: 60px; /* Adjust this value to match the header height */
+  left: 0;
+  width: 250px; /* Fixed width for the sidebar */
+  height: calc(100% - 60px); /* The sidebar height is the full viewport height minus the header height */
+  background-color: #343a40;
+  color: white;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  position: relative; /* Added position relative to serve as a reference for absolute positioning */
+  margin-top: 60px; /* Add space for the header */
+  margin-left: 250px; /* Space for the sidebar */
+  width: calc(100% - 250px); /* Adjust container width considering the sidebar width */
+  max-width: calc(100% - 250px); /* Ensure the container doesn't overflow */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Create User Button */
+.btn-create-user {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 50px;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+  position: absolute; /* Changed to absolute */
+  right: 20px; /* Aligning to the right within the container */
+  top: 20px; /* Space between the top of the container and the button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  z-index: 999; /* Ensuring it appears above other elements */
+}
+
+.btn-create-user img {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-create-user:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.table thead th {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.table tbody tr {
+  background-color: #f8f9fa;
+  transition: background-color 0.3s;
+}
+
+.table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.table tbody tr td {
+  border: none;
+}
+
+/* Button Icons */
+.btn-sm {
+  margin: 4px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn-sm img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Modal Styles */
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-header,
+.modal-footer {
+  border: none;
+}
+
+.modal-title {
+  color: #333;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+}
+
+.form-select {
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.form-select {
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="#495057" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px 12px;
+}
+
+.form-select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.form-select option {
+  padding: 10px;
+}

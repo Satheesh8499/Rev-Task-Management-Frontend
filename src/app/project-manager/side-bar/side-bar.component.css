@@ -1,0 +1,24 @@
+body {
+    padding-top: 56px;
+}
+
+.navbar.fixed-top {
+    z-index: 1030; 
+}
+
+.sidebar {
+    position: fixed;
+    top: 57px; 
+    left: 0;
+    width: 200px; 
+    background-color: rgb(58, 52, 57);
+}
+
+.d-flex .nav-link {
+    color: whitesmoke;
+    font-family: Georgia;
+}
+
+.d-flex .title {
+    font-weight: bolder;
+}

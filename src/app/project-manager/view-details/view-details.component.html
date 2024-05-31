@@ -1,0 +1,52 @@
+<!-- Display project details cards --> <!-- Change 'project' to 'projects' -->
+<!-- <div *ngIf="project.showDetails" class="container mt-4"> -->
+<!-- Card to display project details -->
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">{{ project.projectName }}</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-striped">
+            <tbody>
+                <tr>
+                    <td class="font-weight-bold">Description</td>
+                    <td>{{ project.projectDescription }}</td>
+                </tr>
+                <tr>
+                    <td class="font-weight-bold">Start Date</td>
+                    <td>{{ project.startDate | date:'longDate' }}</td>
+                </tr>
+                <tr>
+                    <td class="font-weight-bold">End Date</td>
+                    <td>{{ project.endDate | date:'longDate' }}</td>
+                </tr>
+                <tr>
+                    <td class="font-weight-bold">Tasks</td>
+                    <td>
+                        <a [routerLink]="['/view-tasks', {projectId}]"
+                            routerLinkActive="active">Task Details</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-weight-bold">Status</td>
+                    <td>{{ project.status }}</td>
+                </tr>
+                <tr>
+                    <td class="font-weight-bold">Pie Chart</td>
+                    <td>
+                        <button (click)="generatePieChart()">Generate Pie Chart</button>
+                        <div class="canvas-container">
+                        <canvas [id]="'taskPieChart' + project.projectID" width="200px" height="200px"></canvas>
+                    </div>                    </td>
+                </tr>
+                <!-- <tr>
+                    <td class="font-weight-bold">Chart</td>
+                    <td>{{ GeneratePieChart }}</td> 
+                    <button (click)="generatePieChart(project.projectID)">Generate Pie Chart</button>
+                     <canvas [id]="'taskPieChart' + project.projectID" width="20" height="20"></canvas>
+                </tr> -->
+
+            </tbody>
+        </table>
+    </div>
+</div>

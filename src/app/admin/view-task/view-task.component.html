@@ -1,0 +1,39 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Task Management</h2>
+    <table class="table table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Task Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Assigned To</th>
+          <th scope="col">Priority</th>
+          <th scope="col">Status</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">Due Date</th>
+          <th scope="col">Completed Date</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of Task; let i = index" [ngClass]="{'odd-row': i % 2 === 0, 'even-row': i % 2 !== 0}">
+          <th scope="row">{{ task.id }}</th>
+          <td>{{ task.name }}</td>
+          <td>{{ task.description }}</td>
+          <td>{{ task.assignedTo }}</td>
+          <td>{{ task.priority }}</td>
+          <td>{{ task.status }}</td>
+          <td>{{ task.startDate | date }}</td>
+          <td>{{ task.dueDate | date }}</td>
+          <td>{{ task.completedDate ? (task.completedDate | date) : 'N/A' }}</td>
+          <td>
+            <!-- <button class="btn btn-info btn-sm" (click)="viewTask(task)">View</button>
+            <button class="btn btn-primary btn-sm" (click)="editTask(task)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteTask(i)">Delete</button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
